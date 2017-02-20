@@ -1,0 +1,24 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Search for the Event you Like!";
+}
+
+<h2>Search for the Event you Like!</h2>
+
+<form id="newRental" method="post" action="EvyEvents\Details">
+    <div class="form-group">
+        <label>Brief Description of the Event</label>
+        <div class="tt-container">
+            <input id="customer" name="customer" required type="text" value="" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+            <ul id="movies" class="list-group"></ul>
+        </div>
+    </div>
+    <button class="btn btn-primary" value="Submit">Search for the Event!</button>
+</form>
+

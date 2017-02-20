@@ -1,0 +1,61 @@
+﻿@model List<Vidly.Models.Result>
+<link href="~/Content/Site.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Search Results";
+}
+
+<h2>Search Results</h2>
+
+
+<div id="content">
+    <div class="table-responsive">
+
+        <table class="table">
+            <tr>
+
+                <th> Event Name </th>
+                <th>Event Description</th>
+
+                <th>Event Fee</th>
+
+
+
+
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @item.name
+                    </td>
+
+                    <td>
+                        @{
+                    if (!string.IsNullOrWhiteSpace(item.description))
+                    {
+                        if (item.description.Length > 100)
+                        {
+                            <span>@Html.Raw(item.description.ToString().Substring(0, 100)) ..<a href="">Read more</a></span>
+                        }
+                        else
+                        {
+                            <span>@Html.Raw(item.description)</span>
+                        }
+                    }
+                        }
+                    
+
+                    </td>
+
+
+                    <td>
+                        @if (item.fee != null)
+                        {
+                            @item.fee.amount
+                        }
+                    </td>
+                </tr>
+                }
+            </table>
+
+        </div>
+    </div>

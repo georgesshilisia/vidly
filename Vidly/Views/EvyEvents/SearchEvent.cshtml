@@ -1,0 +1,10 @@
+﻿@model Vidly.Models.Eventbrite.Fee
+@{
+    ViewBag.Title = "Search for the Event you Like!";
+}
+<h2>Search for the Event you Like!</h2>
+@using (Html.BeginForm("searchResults", "EvyEvents" ,FormMethod.Post)) { 
+    @Html.Label("Search")
+    @Html.TextBox("searchTerm")
+    <input type="submit" value="Search For Event"/>
+}
